@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;700&display=swap" />
+    <link rel="stylesheet" href="/css/styles.min.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+
+    <title>White Devil</title>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Full Stack Developer" />
+    <link rel="canonical" href="/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="White Devil" />
+    <meta property="og:site_name" content="Personal Website" />
+  </head>
+
+  <body>
+    <div class="world-map"></div>
+    <div class="video-background">
+      <video autoplay muted loop>
+        <source src="/images/background.webm" type="video/webm" />
+      </video>
+    </div>
+    <div class="card terminal">
+      <div class="card-header">Terminal</div>
+      <div class="card-body"></div>
+    </div>
+    <div class="cards-container"></div>
+    <audio id="backgroundAudio" autoplay loop>
+      <source src="/audiofile.mp3" type="audio/mp3">
+    </audio>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var audio = document.getElementById("backgroundAudio");
+        
+        // Play audio on user action (e.g., button click)
+        function playAudio() {
+          audio.play();
+        }
+    
+        // Pause audio on user action (e.g., button click)
+        function pauseAudio() {
+          audio.pause();
+          audio.currentTime = 0;
+        }
+    
+        // Attach playAudio function to a user action (e.g., button click)
+        document.getElementById("playButton").addEventListener("click", playAudio);
+    
+        // Attach pauseAudio function to a user action (e.g., button click)
+        document.getElementById("pauseButton").addEventListener("click", pauseAudio);
+    
+        // Optional: Play audio on initial page load (commented out to comply with browser autoplay policies)
+        // playAudio();
+      });
+    </script>
+    <script src="/js/ua-parser.min.js"></script>
+    <script src="/js/analytics.min.js"></script>
+
+    <script src="/js/terminal.min.js"></script>
+    <script src="/js/app.min.js"></script>
+  </body>
+</html>
